@@ -41,3 +41,7 @@ Your web server is now exposed on http://localhost:3000
 - [x] Add Sequelize Typescript example with association
 - [x] Manage multiple database configuration with NODE_ENV
 - [ ] Add Swagger API Framework
+
+
+## Auto-Generate model
+ sequelize-auto -h uzeyrozcan.com -d monetapo_egitim -u monetapo_egitim -x 'm!350951K' -p 3306  -e mysql  -o src/models

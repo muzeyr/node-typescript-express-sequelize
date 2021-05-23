@@ -1,5 +1,5 @@
-import * as LanguagesDao from './languages'
+import * as AppCustomerDao from './customers'
 import * as AppUserDao from './appusers'
+import * as LanguagesDao from './languages';
 
-export { LanguagesDao }
-export { AppUserDao }
+export { AppCustomerDao, AppUserDao, LanguagesDao }
