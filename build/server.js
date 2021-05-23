@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const body_parser_1 = require("body-parser");
 const routes = require("./routes/_index");
+const sequelize = require("./sqlz/models/_index");
 const PORT = 3000;
 class Server {
     constructor() {
@@ -20,10 +21,15 @@ class Server {
         this.app.use(body_parser_1.json());
         this.app.use(boom());
         this.app.use(morgan('combined'));
-        this.app.listen(PORT, () => {
-            winston.log('info', '--> Server successfully started at port %d', PORT);
+        sequelize.default.sync({ force: true }).then(result => {
+            console.log(result);
+            this.app.listen(PORT, () => {
+                winston.log('info', '--> Server successfully started at port %d', PORT);
+            });
+            routes.initRoutes(this.app);
+        }).catch(err => {
+            console.log(err);
         });
-        routes.initRoutes(this.app);
     }
     getApp() {
         return this.app;
