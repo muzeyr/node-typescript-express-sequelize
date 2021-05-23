@@ -1,13 +1,19 @@
  
 # Introduction
 
-Typescript NodeJS + Express + Sequelize(mysql)
+Typescript Node + Express + Sequelize(mysql)
 ## Installation
-
 
 ```bash
 npm install
 ```
+
+## Installation -2
+```bash
+npm -g install gulp-cli
+```
+
+## Installation -3
 DB
 ```bash
 npm install --save mysql // For both mysql and mariadb dialects
