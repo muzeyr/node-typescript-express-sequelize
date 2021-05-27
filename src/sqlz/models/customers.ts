@@ -1,12 +1,11 @@
 import { Model, STRING, UUID, Deferrable } from 'sequelize'
 import sequelize from './_index'
-import { AppUser } from './appuser'
 
-export class AppCustomer extends Model {
+export class Customer extends Model {
 
 }
 
-export class AppUserModel {
+export class CustomerModel {
     id: string
     card_code: string
     phone: string
@@ -16,14 +15,11 @@ export class AppUserModel {
     updatedAt: Date
 }
 
-AppCustomer.init(
+Customer.init(
     {
         card_code: STRING(50),
-        card_name: STRING(50)
+        card_name: STRING(50),
+        uid: STRING(50)
     },
-    { sequelize, modelName: 'AppCustomer' }
+    { sequelize, modelName: 'Customer' }
 )
-
-AppCustomer.belongsTo(AppUser, {
-    foreignKey: 'userId'
-})

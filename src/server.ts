@@ -7,7 +7,7 @@ import { json, urlencoded } from 'body-parser'
 import { Express } from 'express'
 import * as routes from './routes/_index'
 import * as sequelize from './sqlz/models/_index'
-const PORT: number = 3000
+const PORT: number = 3001
 
 export class Server {
 
@@ -43,3 +43,7 @@ export class Server {
     }
 }
 new Server()
+
+function middlewareOptions(middlewareOptions: any): any {
+    throw new Error('Function not implemented.')
+}

@@ -1,11 +1,11 @@
 import { Request, Response } from 'express'
+import { validationResult } from 'express-validator';
 import { AppCustomerDao } from '../../dao/_index'
 
-export function create(req: Request, res: Response) {
+export function create(req, res: Response) {
+    console.log(2222);
 
-    req.checkBody('card_code', 'card_code is required').notEmpty()
-
-    req.getValidationResult()
+    req.getValidationResult(req)
         .then(function(result) {
             if (result.isEmpty()) {
                 return AppCustomerDao.create(req.body)
