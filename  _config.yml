@@ -1,51 +1,18 @@
-version: 1
-env:
-  variables:
-      key: value
-backend:
-  phases:
-    preBuild:
-      commands:
-        - *enter command*
-    build:
-      commands:
-        - *enter command*
-    postBuild:
-        commands:
-        - *enter command*
+version: 0.1
 frontend:
   phases:
     preBuild:
       commands:
-        - cd react-app
-        - npm ci
+        - npm install
+    # IMPORTANT - Please verify your build commands
     build:
-      commands:
-        - npm run build
+      commands: 
+        - make build
   artifacts:
+    # IMPORTANT - Please verify your build output directory
+    baseDirectory: /
     files:
-        - location
-        - location
-    discard-paths: yes
-    baseDirectory: location
+      - '**/*'
   cache:
     paths:
-        - path
-        - path
-test:
-  phases:
-    preTest:
-      commands:
-        - *enter command*
-    test:
-      commands:
-        - *enter command*
-    postTest:
-      commands:
-        - *enter command*
-  artifacts:
-    files:
-        - location
-        - location
-    configFilePath: *location*
-    baseDirectory: *location*
+      - node_modules/**/*
