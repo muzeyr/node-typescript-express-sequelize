@@ -1,1 +1,0 @@
-{"version":3,"sources":["dao/_index.ts"],"names":[],"mappings":";;AAAA,8CAA6C;AAEpC,wCAAc","file":"_index.js","sourcesContent":["import * as AppCustomerDao from './customers'\r\n\r\nexport { AppCustomerDao }\r\n"],"sourceRoot":"../../src"}

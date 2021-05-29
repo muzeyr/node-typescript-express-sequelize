@@ -1,1 +1,0 @@
-{"version":3,"sources":["endpoints/customers/_index.ts"],"names":[],"mappings":";;AAAA,kDAAiD;AAGxC,wCAAc;AAFvB,oDAAmD;AAE1B,0CAAe","file":"_index.js","sourcesContent":["import * as AppCustomerGet from './customers.get'\r\nimport * as AppCustomerPost from './customers.post'\r\n\r\nexport { AppCustomerGet, AppCustomerPost }\r\n"],"sourceRoot":"../../../src"}
