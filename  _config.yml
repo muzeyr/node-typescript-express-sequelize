@@ -1,23 +1,15 @@
-version: 0.2
+version: 0.1
+frontend:
+   phases:
+      build:
+         commands:
+            - npm build
+    artifacts:
+       baseDirectory: build
+       files:
+          - '**/*'
+    cache:
+       paths:
+         - build/**/*
 
-phases:
-  pre_build:
-    commands:
-      - cd client && npm install && cd ..
-      - cd server && npm install && cd ..
-  build:
-    commands:
-      - cd client && npm run build && cd ..
-  post_build:
-    commands:
-      - mv ./client/build ./build
-artifacts:
-  secondary-artifacts:
-    client:
-      files:
-        - '**/*'
-      base-directory: build
-    server:
-      files:
-        - '**/*'
-      base-directory: server
+        
