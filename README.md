@@ -21,27 +21,6 @@ npm install --save sqlite3
 npm install --save tedious // MSSQL
 ```
 
-## Configure your database
+##  AWS
+ssh -v -i my-node-jsn.pem ec2-3-9-118-31.eu-west-2.compute.amazonaws.com
 
-Sequelize configuration and entities can be found in /Src/sqlz directory.
-
-| Directory | Description |
-|---|---|
-| config  | Your database configuration. |
-
-## Run the project
-
-```bash
-npm start
-```
-
-Your web server is now exposed on http://localhost:3000
-
-## Roadmap
-- [x] Add Sequelize Typescript example with association
-- [x] Manage multiple database configuration with NODE_ENV
-- [ ] Add Swagger API Framework
-
-
-## Auto-Generate model
- sequelize-auto -h uzeyrozcan.com -d monetapo_egitim -u monetapo_egitim -x 'm!350951K' -p 3306  -e mysql  -o src/models

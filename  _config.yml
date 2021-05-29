@@ -1,23 +1,23 @@
-version: 0.1 
-backend:
-  phases:
-    build:
-      commands:
-        - amplifyPush --simple
-frontend:
-  phases:
-    preBuild:
-      commands:
-        - npm install
-    # IMPORTANT - Please verify your build commands
-    build:
-      commands: 
-        - npm start:prod
-  artifacts:
-    # IMPORTANT - Please verify your build output directory
-    baseDirectory: /build
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - cd client && npm install && cd ..
+      - cd server && npm install && cd ..
+  build:
+    commands:
+      - cd client && npm run build && cd ..
+  post_build:
+    commands:
+      - mv ./client/build ./build
+artifacts:
+  secondary-artifacts:
+    client:
+      files:
+        - '**/*'
+      base-directory: build
+    server:
+      files:
+        - '**/*'
+      base-directory: server
