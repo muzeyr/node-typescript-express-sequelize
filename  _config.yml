@@ -1,4 +1,9 @@
-version: 0.1
+version: 0.1 
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
@@ -7,10 +12,10 @@ frontend:
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
-        - make build
+        - npm run build
   artifacts:
     # IMPORTANT - Please verify your build output directory
-    baseDirectory: /
+    baseDirectory: /build
     files:
       - '**/*'
   cache:
