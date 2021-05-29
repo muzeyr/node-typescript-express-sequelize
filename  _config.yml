@@ -12,7 +12,7 @@ frontend:
     # IMPORTANT - Please verify your build commands
     build:
       commands: 
-        - npm run build
+        - npm start:prod
   artifacts:
     # IMPORTANT - Please verify your build output directory
     baseDirectory: /build
