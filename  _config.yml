@@ -1,15 +1,25 @@
 version: 0.1
+backend:
+  phases:
+    build:
+      commands:
+        - '# Execute Amplify CLI with the helper script'
+        - amplifyPush --simple
 frontend:
-   phases:
-      build:
-         commands:
-            - npm build
-    artifacts:
-       baseDirectory: build
-       files:
-          - '**/*'
-    cache:
-       paths:
-         - build/**/*
-
-        
+  phases:
+    preBuild:
+      commands:
+        - nvm use $VERSION_NODE_10
+        - npm ci
+    build:
+      commands:
+        - nvm use $VERSION_NODE_10
+        - node -v
+        - npm run-script build
+  artifacts:
+    baseDirectory: dist/cr-client
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
